@@ -10,6 +10,7 @@ M.treesitter = {
     "toml",
     "markdown",
     "c",
+    "cpp",
     "bash",
     "lua",
     "java",
@@ -48,16 +49,12 @@ M.mason = {
     "lua-language-server",
     "stylua",
 
-    -- web
-    "json-lsp",
-    "typescript-language-server",
-
     -- haskell
     "haskell-language-server",
 
-    -- shell
-    "shfmt",
-    "shellcheck",
+    -- c & cpp
+    "clangd",
+    "clang-format",
   }, -- not an option from mason.nvim
 }
 
