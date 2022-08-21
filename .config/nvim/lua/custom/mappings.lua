@@ -12,4 +12,10 @@ M.disabled = {
   },
 }
 
+M.general = {
+  n = {
+    ["<leader>co"] = { "<cmd> w | %bd | e# | bd# <CR>", "close other buffers" },
+  }
+}
+
 return M
