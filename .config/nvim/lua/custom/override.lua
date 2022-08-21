@@ -112,4 +112,25 @@ M.gitsigns = {
   end,
 }
 
+M.cmp = function()
+  local cmp = require("cmp")
+
+  return {
+    mapping = {
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        cmp.mapping.abort()
+        local copilot_keys = vim.fn["copilot#Accept"]()
+        if copilot_keys ~= "" then
+          vim.api.nvim_feedkeys(copilot_keys, "i", true)
+        else
+          fallback()
+        end
+      end, {
+        "i",
+        "s",
+      }),
+    },
+  }
+end
+
 return M

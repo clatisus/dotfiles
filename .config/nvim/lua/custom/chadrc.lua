@@ -9,6 +9,7 @@ M.plugins = {
     ["nvim-telescope/telescope.nvim"] = override.telescope,
     ["williamboman/mason.nvim"] = override.mason,
     ["lewis6991/gitsigns.nvim"] = override.gitsigns,
+    ["hrsh7th/nvim-cmp"] = override.cmp,
   },
 
   user = require("custom.plugins"),
