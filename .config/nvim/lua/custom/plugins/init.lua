@@ -28,4 +28,6 @@ return {
   ["github/copilot.vim"] = {
     branch = "release",
   },
+
+  ["vim-scripts/BufOnly.vim"] = {},
 }

@@ -12,4 +12,10 @@ M.disabled = {
   },
 }
 
+M.misc = {
+  n = {
+    ["<leader>do"] = { "<cmd> BufOnly <CR>", "delete all other buffers" },
+  },
+}
+
 return M
