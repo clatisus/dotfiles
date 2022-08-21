@@ -11,7 +11,7 @@ local sources = {
   b.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } }),
 
   -- cpp
-  b.formatting.clang_format,
+  b.formatting.clang_format.with({ extra_args = { "--style", "Google" } }),
 }
 
 null_ls.setup({
