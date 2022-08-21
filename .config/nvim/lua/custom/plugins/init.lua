@@ -30,4 +30,6 @@ return {
   },
 
   ["vim-scripts/BufOnly.vim"] = {},
+
+  ["p00f/cphelper.nvim"] = {},
 }
