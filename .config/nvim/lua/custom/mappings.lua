@@ -9,6 +9,8 @@ M.disabled = {
     ["<leader>th"] = "", -- nvchad themes
     ["<leader>wK"] = "", -- which-key all keymaps
     ["<leader>wk"] = "", -- which-key query lookup
+    ["<leader>h"] = "", -- new terminal
+    ["<leader>v"] = "", -- ner terminal
   },
 }
 
