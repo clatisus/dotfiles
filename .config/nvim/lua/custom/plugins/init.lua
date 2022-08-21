@@ -31,5 +31,9 @@ return {
 
   ["vim-scripts/BufOnly.vim"] = {},
 
-  ["p00f/cphelper.nvim"] = {},
+  ["p00f/cphelper.nvim"] = {
+    config = function()
+      vim.g.cphdir = (vim.loop.os_homedir() .. "/repos/coding-competition")
+    end,
+  },
 }
