@@ -10,6 +10,7 @@ M.plugins = {
     ["williamboman/mason.nvim"] = override.mason,
     ["lewis6991/gitsigns.nvim"] = override.gitsigns,
     ["hrsh7th/nvim-cmp"] = override.cmp,
+    ["NvChad/ui"] = override.ui,
   },
 
   user = require("custom.plugins"),

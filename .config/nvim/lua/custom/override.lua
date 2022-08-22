@@ -139,4 +139,13 @@ M.cmp = function()
   }
 end
 
+M.ui = {
+  statusline = {
+    separator_style = "block",
+  },
+  tabufline = {
+    lazyload = false,
+  },
+}
+
 return M
