@@ -25,6 +25,7 @@ M.treesitter = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
 
   renderer = {
@@ -32,6 +33,11 @@ M.nvimtree = {
     icons = {
       show = {
         git = true,
+      },
+      glyphs = {
+        git = {
+          untracked = "",
+        },
       },
     },
   },
