@@ -42,4 +42,10 @@ return {
       vim.g.cpp_compile_command = "g++ -Wall -std=c++17 solution.cpp -o cpp.out"
     end,
   },
+
+  ["andreadev-it/shade.nvim"] = {
+    config = function()
+      require("custom.plugins.shade")
+    end,
+  },
 }
