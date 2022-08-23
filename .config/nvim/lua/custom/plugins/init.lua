@@ -2,6 +2,14 @@ return {
 
   ["folke/which-key.nvim"] = {
     disable = false,
+    config = function()
+      require("plugins.configs.whichkey")
+      require("custom.plugins.whichkey")
+    end,
+  },
+
+  ["goolord/alpha-nvim"] = {
+    disable = false,
   },
 
   ["neovim/nvim-lspconfig"] = {
@@ -46,6 +54,12 @@ return {
   ["andreadev-it/shade.nvim"] = {
     config = function()
       require("custom.plugins.shade")
+    end,
+  },
+
+  ["kylechui/nvim-surround"] = {
+    config = function()
+      require("nvim-surround").setup()
     end,
   },
 }

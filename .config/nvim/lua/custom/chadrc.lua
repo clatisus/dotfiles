@@ -11,6 +11,7 @@ M.plugins = {
     ["lewis6991/gitsigns.nvim"] = override.gitsigns,
     ["hrsh7th/nvim-cmp"] = override.cmp,
     ["NvChad/ui"] = override.ui,
+    ["goolord/alpha-nvim"] = override.alpha,
   },
 
   user = require("custom.plugins"),
