@@ -51,12 +51,6 @@ return {
     end,
   },
 
-  ["andreadev-it/shade.nvim"] = {
-    config = function()
-      require("custom.plugins.shade")
-    end,
-  },
-
   ["kylechui/nvim-surround"] = {
     config = function()
       require("nvim-surround").setup()
