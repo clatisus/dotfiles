@@ -9,12 +9,18 @@ vim.g.tokyonight_style = "night"
 lvim.leader = "space"
 lvim.keys.normal_mode["<ESC>"] = "<cmd> noh <CR>"
 lvim.keys.normal_mode["<C-c>"] = "<cmd> %y+ <CR>"
+lvim.keys.term_mode["<ESC>"] = "<C-\\><C-n>"
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
+
 lvim.builtin.notify.active = true
+
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.direction = "horizontal"
+lvim.builtin.terminal.open_mapping = [[<A-t>]]
+
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.filesystem_watchers = { enable = true }
@@ -36,7 +42,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
   "yaml",
 }
-
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
@@ -45,6 +50,7 @@ lvim.lsp.installer.setup.ensure_installed = {
   "sumeko_lua",
   "clangd",
   "hls",
+  "jsonls",
 }
 
 -- ---@usage disable automatic installation of servers
@@ -71,10 +77,26 @@ lvim.lsp.automatic_servers_installation = false
 --   --Enable completion triggered by <c-x><c-o>
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require('lspconfig').clangd.setup({ capabilities = capabilities })
 
 
 -- Additional Plugins
 lvim.plugins = {
+  { "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup {
+          plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+        }
+      end, 100)
+    end,
+  },
+  { "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua", "nvim-cmp" },
+  },
   { "folke/tokyonight.nvim" },
   { "tpope/vim-surround" },
   { "p00f/cphelper.nvim",
@@ -88,3 +110,8 @@ lvim.plugins = {
   --   cmd = "TroubleToggle",
   -- },
 }
+
+-- Copilot
+-- Can not be placed into the config method of the plugins.
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
