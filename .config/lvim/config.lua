@@ -51,6 +51,7 @@ lvim.lsp.installer.setup.ensure_installed = {
   "clangd",
   "hls",
   "jsonls",
+  "tsserver",
 }
 
 -- ---@usage disable automatic installation of servers
