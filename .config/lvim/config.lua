@@ -6,22 +6,22 @@ lvim.colorscheme = "tokyonight"
 vim.g.tokyonight_style = "night"
 vim.opt.wrap = true
 
--- keymappings [view all the defaults by pressing <leader>Lk]
+------------------------------------------- Keymappings ------------------------------------------------
 lvim.leader = "space"
 lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
 lvim.keys.normal_mode["<ESC>"] = "<cmd> noh <CR>"
 lvim.keys.normal_mode["<C-c>"] = "<cmd> %y+ <CR>"
 lvim.keys.term_mode["<A-x>"] = "<C-\\><C-n>"
 
+--------------------------------------------- Builtin --------------------------------------------------
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+require("user.alpha").config()
+
 local components = require("lvim.core.lualine.components")
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_y = {
   components.location
 }
-
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
 
 lvim.builtin.notify.active = true
 
@@ -52,7 +52,11 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- generic LSP settings
+-- Copilot
+-- Can not be placed into the config method of the plugins.
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+----------------------------------------------- LSP ----------------------------------------------------
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
   "sumeko_lua",
@@ -91,6 +95,7 @@ capabilities.offsetEncoding = { "utf-16" }
 require('lspconfig').clangd.setup({ capabilities = capabilities })
 
 
+--------------------------------------------- Plugins --------------------------------------------------
 -- Additional Plugins
 lvim.plugins = {
   { "lukas-reineke/indent-blankline.nvim" },
@@ -127,8 +132,3 @@ lvim.plugins = {
   --   cmd = "TroubleToggle",
   -- },
 }
-
--- Copilot
--- Can not be placed into the config method of the plugins.
-lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
