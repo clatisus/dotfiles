@@ -2,13 +2,13 @@
   "includes": {
     "prefix": "includes",
     "body": [
+      "#include <algorithm>",
       "#include <cstdio>",
       "#include <cstdlib>",
-      "#include <queue>",
-      "#include <algorithm>",
-      "#include <vector>",
-      "#include <map>",
       "#include <cstring>",
+      "#include <map>",
+      "#include <queue>",
+      "#include <vector>",
       "",
       "$1"
     ],
