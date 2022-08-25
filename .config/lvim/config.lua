@@ -4,14 +4,22 @@ lvim.format_on_save = true
 lvim.colorscheme = "tokyonight"
 
 vim.g.tokyonight_style = "night"
+vim.opt.wrap = true
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
+lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
 lvim.keys.normal_mode["<ESC>"] = "<cmd> noh <CR>"
 lvim.keys.normal_mode["<C-c>"] = "<cmd> %y+ <CR>"
-lvim.keys.term_mode["<ESC>"] = "<C-\\><C-n>"
+lvim.keys.term_mode["<A-x>"] = "<C-\\><C-n>"
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+local components = require("lvim.core.lualine.components")
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.sections.lualine_y = {
+  components.location
+}
+
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 
@@ -85,6 +93,7 @@ require('lspconfig').clangd.setup({ capabilities = capabilities })
 
 -- Additional Plugins
 lvim.plugins = {
+  { "lukas-reineke/indent-blankline.nvim" },
   { "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
     config = function()
@@ -104,6 +113,13 @@ lvim.plugins = {
     config = function()
       vim.g.cphdir = (vim.loop.os_homedir() .. "/repos/coding-competition")
       vim.g.cpp_compile_command = "g++ -Wall -std=c++17 solution.cpp -o cpp.out"
+    end,
+  },
+  {
+    "ggandor/leap.nvim",
+    event = { "BufRead" },
+    config = function()
+      require('leap').set_default_keymaps()
     end,
   },
   -- {

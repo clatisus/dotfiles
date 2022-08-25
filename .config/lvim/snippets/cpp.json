@@ -1,0 +1,41 @@
+{
+  "includes": {
+    "prefix": "includes",
+    "body": [
+      "#include <cstdio>",
+      "#include <cstdlib>",
+      "#include <queue>",
+      "#include <algorithm>",
+      "#include <vector>",
+      "#include <map>",
+      "#include <cstring>",
+      "",
+      "$1"
+    ],
+    "description": "includes for competitive programming"
+  },
+  "intmain": {
+    "prefix": "intmain",
+    "body": [
+      "int main() {",
+      "  $1",
+      "  return 0;",
+      "}"
+    ],
+    "description": "main for competitive programming"
+  },
+  "intmainT": {
+    "prefix": "intmainT",
+    "body": [
+      "int main() {",
+      "  int T;",
+      "  scanf(\"%d\", &T);",
+      "  for (int t = 1; t <= T; ++t) {",
+      "    $1",
+      "  }",
+      "  return 0;",
+      "}"
+    ],
+    "description": "multicase main for competitive programming"
+  }
+}
