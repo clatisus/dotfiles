@@ -16,6 +16,7 @@ lvim.keys.term_mode["<A-x>"] = "<C-\\><C-n>"
 --------------------------------------------- Builtin --------------------------------------------------
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 require("user.alpha").config()
+require("user.telescope").config()
 
 local components = require("lvim.core.lualine.components")
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
