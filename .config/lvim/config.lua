@@ -12,6 +12,20 @@ lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
 lvim.keys.normal_mode["<ESC>"] = "<cmd> noh <CR>"
 lvim.keys.normal_mode["<C-c>"] = "<cmd> %y+ <CR>"
 lvim.keys.term_mode["<A-x>"] = "<C-\\><C-n>"
+lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", " Cheat.sh" }
+lvim.builtin.which_key.mappings["t"] = {
+  name = " Trouble",
+  d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnosticss" },
+  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  t = { "<cmd>TodoLocList <cr>", "Todo" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnosticss" },
+}
+lvim.builtin.which_key.mappings["sF"] = {
+  "<cmd>Telescope file_browser<cr>", "File Browser"
+}
 
 --------------------------------------------- Builtin --------------------------------------------------
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -65,6 +79,9 @@ lvim.lsp.installer.setup.ensure_installed = {
   "hls",
   "jsonls",
   "tsserver",
+  "pyright",
+  "taplo",
+  "rust_analyzer",
 }
 
 -- ---@usage disable automatic installation of servers
@@ -99,6 +116,35 @@ require('lspconfig').clangd.setup({ capabilities = capabilities })
 --------------------------------------------- Plugins --------------------------------------------------
 -- Additional Plugins
 lvim.plugins = {
+  {
+    "RishabhRD/nvim-cheat.sh",
+    requires = "RishabhRD/popfix",
+    config = function()
+      vim.g.cheat_default_window_layout = "float"
+    end,
+    opt = true,
+    cmd = { "Cheat", "CheatWithoutComments", "CheatList", "CheatListWithoutComments" },
+  },
+  {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {
+        auto_open = false,
+        auto_close = true,
+        padding = false,
+        height = 10,
+        use_diagnostic_signs = true,
+      }
+    end,
+    cmd = "Trouble",
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      require("user/lsp_signature").config()
+    end,
+    event = { "BufRead", "BufNew" },
+  },
   { "lukas-reineke/indent-blankline.nvim" },
   { "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
@@ -127,8 +173,73 @@ lvim.plugins = {
       require('leap').set_default_keymaps()
     end,
   },
-  -- {
-  --   "folke/trouble.nvim",
-  --   cmd = "TroubleToggle",
-  -- },
+  {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup({
+        keywords = {
+          FIX = {
+            icon = " ", -- icon used for the sign, and in search results
+            color = "error", -- can be a hex color, or a named color (see below)
+            alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+            -- signs = false, -- configure signs for some keywords individually
+          },
+          TODO = { icon = " ", color = "info" },
+          HACK = { icon = " ", color = "warning" },
+          WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+          PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+          NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+        },
+      })
+    end,
+    event = "BufRead",
+  },
+  {
+    "andymass/vim-matchup",
+    event = "BufReadPost",
+    config = function()
+      vim.g.matchup_enabled = 1
+      vim.g.matchup_surround_enabled = 1
+      vim.g.matchup_matchparen_deferred = 1
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
+  -- <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup {
+        easing_function = "quadratic",
+      }
+    end,
+    event = "BufRead",
+  },
+  {
+    "AckslD/nvim-neoclip.lua",
+    config = function()
+      require("user.neoclip").config()
+    end,
+    requires = { "tami5/sqlite.lua", module = "sqlite" },
+  },
+  {
+    "abecodes/tabout.nvim",
+    wants = { "nvim-treesitter" },
+    after = { "nvim-cmp" },
+    config = function()
+      require("user.tabout").config()
+    end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    config = function()
+      require("telescope").load_extension "file_browser"
+    end
+  },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("user.fidget_spinner").config()
+    end,
+  },
 }
