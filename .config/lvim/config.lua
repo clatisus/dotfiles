@@ -118,7 +118,7 @@ lvim.plugins = {
   { "p00f/cphelper.nvim",
     config = function()
       vim.g.cphdir = (vim.loop.os_homedir() .. "/repos/coding-competition")
-      vim.g.cpp_compile_command = "g++ -Wall -std=c++17 solution.cpp -o cpp.out"
+      vim.g.cpp_compile_command = "clang -Wall -std=c++17 solution.cpp -o cpp.out -g"
     end,
   },
   {
