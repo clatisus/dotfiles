@@ -123,7 +123,6 @@ lvim.plugins = {
   },
   {
     "ggandor/leap.nvim",
-    event = { "BufRead" },
     config = function()
       require('leap').set_default_keymaps()
     end,
