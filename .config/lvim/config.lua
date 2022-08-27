@@ -242,4 +242,24 @@ lvim.plugins = {
       require("user.fidget_spinner").config()
     end,
   },
+  {
+    "hrsh7th/cmp-cmdline",
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'cmdline' }
+        }, {
+          { name = "path" }
+        })
+      })
+      require("cmp").setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "buffer" }
+        })
+      })
+    end,
+  }
 }
