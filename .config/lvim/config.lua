@@ -56,6 +56,8 @@ lvim.builtin.which_key.mappings["sF"] = {
 require("user.alpha").config()
 require("user.telescope").config()
 
+-- lvim.builtin.autopairs.active = false
+
 lvim.builtin.bufferline.options.always_show_bufferline = true
 
 local components = require("lvim.core.lualine.components")
@@ -198,7 +200,7 @@ lvim.plugins = {
   { "p00f/cphelper.nvim",
     config = function()
       vim.g.cphdir = (vim.loop.os_homedir() .. "/repos/coding-competition")
-      vim.g.cpp_compile_command = "clang -Wall -std=c++17 solution.cpp -o cpp.out -g"
+      vim.g.cpp_compile_command = "g++ -Wall -std=c++17 solution.cpp -o cpp.out -g"
     end,
   },
   {
