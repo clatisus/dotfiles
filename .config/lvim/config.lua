@@ -8,7 +8,6 @@ vim.opt.wrap = true
 
 ------------------------------------------- Keymappings ------------------------------------------------
 lvim.leader = "space"
-lvim.keys.normal_mode["<Leader>bo"] = ':%bd!|e #|bd #|normal`"<CR>'
 lvim.keys.normal_mode["<ESC>"] = "<cmd> noh <CR>"
 lvim.keys.normal_mode["<C-c>"] = "<cmd> %y+ <CR>"
 lvim.keys.term_mode["<A-x>"] = "<C-\\><C-n>"
@@ -19,6 +18,10 @@ lvim.builtin.which_key.mappings[";"][2] = " Dashboard"
 lvim.builtin.which_key.mappings["c"][2] = " Close Buffer"
 lvim.builtin.which_key.mappings["/"][2] = " Comment"
 lvim.builtin.which_key.mappings["b"].name = "﬘ Buffers"
+lvim.builtin.which_key.mappings["b"]["o"] = {
+  "<cmd> BufferLineCloseLeft <cr><cmd> BufferLineCloseRight <cr>",
+  "Close others"
+}
 lvim.builtin.which_key.mappings["g"].name = " Git"
 lvim.builtin.which_key.mappings["L"].name = " LunarVim"
 lvim.builtin.which_key.mappings["s"].name = " Search"
