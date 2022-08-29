@@ -5,6 +5,8 @@ lvim.colorscheme = "tokyonight"
 
 vim.g.tokyonight_style = "night"
 vim.opt.wrap = true
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
 
 ------------------------------------------- Keymappings ------------------------------------------------
 lvim.leader = "space"
