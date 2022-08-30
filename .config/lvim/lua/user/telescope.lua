@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function()
+M.setup = function()
   lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git", "node_modules" }
 end
 

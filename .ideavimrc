@@ -1,0 +1,22 @@
+let mapleader = " "
+
+set surround
+
+set hlsearch
+set incsearch
+set ignorecase
+set clipboard=unnamed,unnamedplus
+set clipboard+=ideaput
+
+nmap <A-a> ggVG
+
+nmap <leader>c <Action>(CloseContent)
+nmap <leader>bh <Action>(CloseAllToTheLeft)
+nmap <leader>bl <Action>(CloseAllToTheRight)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+
+nnoremap Y y$
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k

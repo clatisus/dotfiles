@@ -37,8 +37,7 @@ local function plugin_count()
 
 end
 
-M.config = function()
-  lvim.builtin.alpha.active = true
+M.setup = function()
   lvim.builtin.alpha.mode = "dashboard"
 
   local merge_tb = require("utils").merge_tb
