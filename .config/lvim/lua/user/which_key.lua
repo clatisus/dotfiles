@@ -16,7 +16,7 @@ M.setup = function()
     "Close others"
   }
 
-  lvim.builtin.which_key.mappings["g"].name = " Git"
+  lvim.builtin.which_key.mappings["g"].name = " Git"
   lvim.builtin.which_key.mappings["L"].name = " LunarVim"
   lvim.builtin.which_key.mappings["s"].name = " Search"
   lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<CR>", " Cheat.sh" }
