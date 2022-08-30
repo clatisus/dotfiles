@@ -11,6 +11,7 @@ M.setup = function()
     "pyright",
     "taplo",
     "rust_analyzer",
+    "yamlls",
   }
 
   -- ---@usage disable automatic installation of servers
