@@ -1,5 +1,3 @@
-let mapleader = " "
-
 set surround
 
 set hlsearch
@@ -10,6 +8,7 @@ set clipboard+=ideaput
 
 nmap <A-a> ggVG
 
+let mapleader = " "
 nmap <leader>c <Action>(CloseContent)
 nmap <leader>bh <Action>(CloseAllToTheLeft)
 nmap <leader>bl <Action>(CloseAllToTheRight)
