@@ -47,6 +47,7 @@ M.setup = function()
     },
     { "folke/tokyonight.nvim" },
     { "tpope/vim-surround" },
+    { "tpope/vim-repeat" },
     { "p00f/cphelper.nvim",
       config = function()
         vim.g.cphdir = (vim.loop.os_homedir() .. "/repos/coding-competition")

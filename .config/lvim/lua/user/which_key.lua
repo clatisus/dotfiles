@@ -4,7 +4,7 @@ M.setup = function()
   lvim.leader = "space"
 
   lvim.builtin.which_key.mappings["h"] = nil
-  lvim.builtin.which_key.mappings["w"] = nil
+  lvim.builtin.which_key.mappings["w"][2] = " Save"
   lvim.builtin.which_key.mappings["q"][2] = " Quit"
   lvim.builtin.which_key.mappings[";"][2] = " Dashboard"
   lvim.builtin.which_key.mappings["c"][2] = " Close Buffer"
