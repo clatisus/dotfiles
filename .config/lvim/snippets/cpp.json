@@ -13,8 +13,7 @@
       "#include <queue>",
       "#include <set>",
       "#include <vector>",
-      "",
-      "$1"
+      ""
     ],
     "description": "includes for competitive programming"
   },
@@ -35,7 +34,6 @@
       "  int T;",
       "  scanf(\"%d\", &T);",
       "  for (int t = 1; t <= T; ++t) {",
-      "    $1",
       "  }",
       "  return 0;",
       "}"
