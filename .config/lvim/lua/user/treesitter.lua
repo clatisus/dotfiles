@@ -16,6 +16,7 @@ M.setup = function()
     "css",
     "rust",
     "java",
+    "kotlin",
     "yaml",
   }
   lvim.builtin.treesitter.highlight.enabled = true
