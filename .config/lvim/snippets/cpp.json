@@ -10,7 +10,10 @@
       "#include <cstdlib>",
       "#include <cstring>",
       "#include <map>",
+      "#include <ctime>",
+      "#include <iostream>",
       "#include <queue>",
+      "#include <random>",
       "#include <set>",
       "#include <vector>",
       ""
