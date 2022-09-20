@@ -1,9 +1,8 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-night"
 
-vim.g.tokyonight_style = "night"
 vim.opt.wrap = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
