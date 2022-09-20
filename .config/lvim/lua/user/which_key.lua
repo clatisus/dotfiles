@@ -46,6 +46,9 @@ M.setup = function()
   lvim.builtin.which_key.mappings["sF"] = {
     "<cmd>Telescope file_browser<cr>", "File Browser"
   }
+
+  lvim.builtin.which_key.mappings["de"] = { "<cmd>lua require('dapui').eval()<cr>", "Eval" }
+  lvim.builtin.which_key.mappings["dU"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle UI" }
 end
 
 return M

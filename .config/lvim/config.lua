@@ -10,9 +10,7 @@ vim.opt.foldlevel = 99
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.alpha.active = true
-------------------------------------------- Keymappings ------------------------------------------------
-require("user.keybindings").setup()
-require("user.which_key").setup()
+lvim.builtin.dap.active = true
 
 --------------------------------------------- Builtin --------------------------------------------------
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -31,3 +29,10 @@ require("user.formatters").setup()
 
 --------------------------------------------- Plugins --------------------------------------------------
 require("user.plugins").setup()
+
+------------------------------------------- Autocommand ------------------------------------------------
+require("user.autocommands").setup()
+
+------------------------------------------- Keymappings ------------------------------------------------
+require("user.keybindings").setup()
+require("user.which_key").setup()

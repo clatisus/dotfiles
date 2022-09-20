@@ -1,21 +1,10 @@
 local M = {}
 
 M.setup = function()
-  -- -- make sure server will always be installed even if the server is in skipped_servers list
-  lvim.lsp.installer.setup.ensure_installed = {
-    "sumeko_lua",
-    "clangd",
-    "hls",
-    "jsonls",
-    "tsserver",
-    "pyright",
-    "taplo",
-    "rust_analyzer",
-    "yamlls",
-  }
+  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
   -- ---@usage disable automatic installation of servers
-  lvim.lsp.installer.setup.automatic_installation = false
+  -- lvim.lsp.installer.setup.automatic_installation = false
 
   -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
   -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`

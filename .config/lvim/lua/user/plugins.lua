@@ -3,6 +3,22 @@ local M = {}
 M.setup = function()
   lvim.plugins = {
     {
+      "rcarriga/nvim-dap-ui",
+      config = function()
+        require("user.dapui").config()
+      end,
+      ft = { "rust" },
+      event = "BufReadPost",
+      requires = { "mfussenegger/nvim-dap" },
+    },
+    {
+      "simrat39/rust-tools.nvim",
+      config = function()
+        require("user.rust_tools").config()
+      end,
+      ft = { "rust", "rs" },
+    },
+    {
       "RishabhRD/nvim-cheat.sh",
       requires = "RishabhRD/popfix",
       config = function()
