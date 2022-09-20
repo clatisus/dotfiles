@@ -7,6 +7,8 @@ vim.opt.wrap = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 
+lvim.builtin.illuminate.active = true
+lvim.builtin.breadcrumbs.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.alpha.active = true
