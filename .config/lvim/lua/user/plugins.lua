@@ -3,6 +3,13 @@ local M = {}
 M.setup = function()
   lvim.plugins = {
     {
+      "p00f/clangd_extensions.nvim",
+      config = function()
+        require("user.cle").config()
+      end,
+      ft = { "c", "cpp" },
+    },
+    {
       "rcarriga/nvim-dap-ui",
       config = function()
         require("user.dapui").config()
