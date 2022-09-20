@@ -7,6 +7,8 @@ vim.opt.wrap = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 
+--------------------------------------------- Builtin --------------------------------------------------
+-- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.illuminate.active = true
 lvim.builtin.breadcrumbs.active = true
 lvim.builtin.notify.active = true
@@ -14,8 +16,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.alpha.active = true
 lvim.builtin.dap.active = true
 
---------------------------------------------- Builtin --------------------------------------------------
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 require("user.alpha").setup()
 require("user.telescope").setup()
 require("user.bufferline").setup()
@@ -26,8 +26,7 @@ require("user.treesitter").setup()
 require("user.cmp").setup()
 
 ----------------------------------------------- LSP ----------------------------------------------------
-require("user.lsp").setup()
-require("user.formatters").setup()
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer", "clangd" })
 
 --------------------------------------------- Plugins --------------------------------------------------
 require("user.plugins").setup()
