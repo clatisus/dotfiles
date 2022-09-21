@@ -1,11 +1,12 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight-night"
+lvim.colorscheme = "tokyonight"
 
 vim.opt.wrap = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
+vim.opt.showcmd = true
 
 --------------------------------------------- Builtin --------------------------------------------------
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -15,6 +16,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.alpha.active = true
 lvim.builtin.dap.active = true
+lvim.builtin.indentlines.active = true
 
 require("user.alpha").setup()
 require("user.telescope").setup()

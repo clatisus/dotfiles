@@ -54,7 +54,6 @@ M.setup = function()
       end,
       event = { "BufRead", "BufNew" },
     },
-    { "lukas-reineke/indent-blankline.nvim" },
     { "zbirenbaum/copilot.lua",
       event = { "VimEnter" },
       config = function()
