@@ -10,15 +10,6 @@ M.setup = function()
       ft = { "c", "cpp" },
     },
     {
-      "rcarriga/nvim-dap-ui",
-      config = function()
-        require("user.dapui").config()
-      end,
-      ft = { "rust" },
-      event = "BufReadPost",
-      requires = { "mfussenegger/nvim-dap" },
-    },
-    {
       "simrat39/rust-tools.nvim",
       config = function()
         require("user.rust_tools").config()
