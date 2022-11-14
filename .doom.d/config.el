@@ -76,7 +76,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (setq haskell-interactive-popup-errors nil)
 (setq doc-view-continuous t)
 
