@@ -20,3 +20,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
 nnoremap <Esc> :noh<cr>
+
+" Other useful mappings
+" <S-k>: hover doc
+" <C-tab>: hold control using n/p to switch tabs
+" <C-o/i>: navigate to old/new position
