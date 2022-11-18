@@ -9,19 +9,16 @@ set clipboard+=ideaput
 nmap <A-a> ggVG
 
 let mapleader = " "
-nmap <leader>c <Action>(CloseContent)
-nmap <leader>bh <Action>(CloseAllToTheLeft)
-nmap <leader>bl <Action>(CloseAllToTheRight)
-nmap <leader>bo <Action>(CloseAllEditorsButActive)
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>bO <Action>(CloseAllEditorsButActive)
+
+map gs<leader> <Action>(AceAction)
 
 nnoremap Y y$
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-h> <C-w>h
-nnoremap <C-k> <C-w>k
 nnoremap <Esc> :noh<cr>
 
 " Other useful mappings
 " <S-k>: hover doc
 " <C-tab>: hold control using n/p to switch tabs
 " <C-o/i>: navigate to old/new position
+" <C-w>l/j/h/k: move between windows
