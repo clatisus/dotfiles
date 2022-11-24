@@ -120,3 +120,6 @@
          :map copilot-completion-map
          ("<tab>" . 'copilot-accept-completion)
          ("TAB" . 'copilot-accept-completion)))
+
+;; avy
+(setq avy-timeout-seconds 0.3)

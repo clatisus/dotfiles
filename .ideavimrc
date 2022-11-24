@@ -12,6 +12,11 @@ let mapleader = " "
 nmap <leader>bd <Action>(CloseContent)
 nmap <leader>bO <Action>(CloseAllEditorsButActive)
 
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>ca <Action>(ActivateProblemsViewToolWindow)
+
+nmap <leader>ot <Action>(ActivateTerminalToolWindow)
+
 map gs<leader> <Action>(AceAction)
 
 nnoremap Y y$
