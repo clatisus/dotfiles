@@ -42,7 +42,15 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
-
+(after! org
+  (add-to-list 'org-capture-templates
+               '("wn" "Work notes" entry (file+headline "~/org/work.org" "Notes")
+                 "* %u %? \n"  :prepend t))
+  (add-to-list 'org-capture-templates
+               '("wt" "Work todo" entry (file+headline "~/org/work.org" "Todo")
+                 "* TODO %? \n"  :prepend t))
+  (add-to-list 'org-capture-templates
+               '("w" "Templates for work")))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -85,32 +93,32 @@
 (use-package! centaur-tabs
   :config
   (defun centaur-tabs-hide-tab (x)
-     (let ((name (format "%s" x)))
-       (or
-        ;; Current window is not dedicated window.
-        (window-dedicated-p (selected-window))
+    (let ((name (format "%s" x)))
+      (or
+       ;; Current window is not dedicated window.
+       (window-dedicated-p (selected-window))
 
-        ;; Buffer name not match below blacklist.
-        (string-prefix-p "*epc" name)
-        (string-prefix-p "*helm" name)
-        (string-prefix-p "*Helm" name)
-        (string-prefix-p "*Compile-Log*" name)
-        (string-prefix-p "*lsp" name)
-        (string-prefix-p "*company" name)
-        (string-prefix-p "*Flycheck" name)
-        (string-prefix-p "*tramp" name)
-        (string-prefix-p " *Mini" name)
-        (string-prefix-p "*help" name)
-        (string-prefix-p "*straight" name)
-        (string-prefix-p " *temp" name)
-        (string-prefix-p "*Help" name)
+       ;; Buffer name not match below blacklist.
+       (string-prefix-p "*epc" name)
+       (string-prefix-p "*helm" name)
+       (string-prefix-p "*Helm" name)
+       (string-prefix-p "*Compile-Log*" name)
+       (string-prefix-p "*lsp" name)
+       (string-prefix-p "*company" name)
+       (string-prefix-p "*Flycheck" name)
+       (string-prefix-p "*tramp" name)
+       (string-prefix-p " *Mini" name)
+       (string-prefix-p "*help" name)
+       (string-prefix-p "*straight" name)
+       (string-prefix-p " *temp" name)
+       (string-prefix-p "*Help" name)
 
-        (string-prefix-p "*doom*" name)
-        (string-prefix-p "*Messages*" name)
-        (string-prefix-p "*scratch" name)
-        ;; Is not magit buffer.
-        (and (string-prefix-p "magit" name)
-             (not (file-name-extension name)))))))
+       (string-prefix-p "*doom*" name)
+       (string-prefix-p "*Messages*" name)
+       (string-prefix-p "*scratch" name)
+       ;; Is not magit buffer.
+       (and (string-prefix-p "magit" name)
+            (not (file-name-extension name)))))))
 
 ;; accept completion from copilot and fallback to company
 (use-package! copilot

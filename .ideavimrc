@@ -17,6 +17,8 @@ nmap <leader>ca <Action>(ActivateProblemsViewToolWindow)
 
 nmap <leader>ot <Action>(ActivateTerminalToolWindow)
 
+nmap <leader><leader> <Action>(GotoFile)
+
 map gs<leader> <Action>(AceAction)
 
 nnoremap Y y$
