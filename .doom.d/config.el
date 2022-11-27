@@ -89,16 +89,26 @@
 (setq doc-view-continuous t)
 
 ;; accept completion from copilot and fallback to company
+(defun my-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (company-indent-or-complete-common nil)))
 (use-package! copilot
   :hook (prog-mode . copilot-mode)
-  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
-         ("C-<tab>" . 'copilot-accept-completion-by-word)
-         :map copilot-completion-map
-         ("<tab>" . 'copilot-accept-completion)
-         ("TAB" . 'copilot-accept-completion)))
+  :bind (:map company-active-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)
+         ("C-<" . 'copilot-previous-completion)
+         ("C->" . 'copilot-next-completion)
+         :map company-mode-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)
+         ("C-<" . 'copilot-previous-completion)
+         ("C->" . 'copilot-next-completion)))
 
 ;; avy
 (setq avy-timeout-seconds 0.3)
 
 ;; dash docsets
-(set-docsets! 'Haskell-mode "Haskell")
+(set-docsets! 'cpp-mode "C++")
+(set-docsets! 'haskell-mode "Haskell")
