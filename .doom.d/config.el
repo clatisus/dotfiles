@@ -99,3 +99,6 @@
 
 ;; avy
 (setq avy-timeout-seconds 0.3)
+
+;; dash docsets
+(set-docsets! 'Haskell-mode "Haskell")
