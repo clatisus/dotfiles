@@ -108,7 +108,8 @@
          ("C->" . 'copilot-next-completion)))
 
 ;; avy
-(setq avy-timeout-seconds 0.3)
+(after! avy
+  (setq avy-timeout-seconds 0.3))
 
 ;; dash docsets
 (set-docsets! 'cpp-mode "C++")
