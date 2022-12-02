@@ -113,3 +113,9 @@
 ;; dash docsets
 (set-docsets! 'cpp-mode "C++")
 (set-docsets! 'haskell-mode "Haskell")
+(after! dash-docs
+  (setq dash-docs-browser-func #'+lookup-xwidget-webkit-open-url-fn))
+
+;; indent
+(after! highlight-indent-guides
+  (setq highlight-indent-guides-method 'fill))
