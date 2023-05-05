@@ -1,0 +1,36 @@
+set surround
+
+set hlsearch
+set incsearch
+set ignorecase
+set clipboard=unnamed,unnamedplus
+set clipboard+=ideaput
+
+nmap <A-a> ggVG
+
+let mapleader = " "
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>bO <Action>(CloseAllEditorsButActive)
+
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>ca <Action>(ActivateProblemsViewToolWindow)
+
+map <leader><leader> <Action>(GotoFile)
+
+nmap <leader>wV <Action>(SplitVertically)
+nmap <leader>wH <Action>(SplitHorizontally)
+
+nmap <leader>, <Action>(Switcher)
+
+nmap <A-x> <Action>(GotoAction)
+
+map gs<leader> <Action>(AceAction)
+
+nnoremap Y y$
+nnoremap <Esc> :noh<cr>
+
+" Other useful mappings
+" <S-k>: hover doc
+" <C-tab>: hold control using n/p to switch tabs
+" <C-o/i>: navigate to old/new position
+" <C-w>l/j/h/k: move between windows
