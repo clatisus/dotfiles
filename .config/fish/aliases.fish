@@ -4,9 +4,10 @@ function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
 function ..... ; cd ../../../.. ; end
 
-alias rm='trash -F'
+abbr rm trash -F
 
 abbr g git
+abbr gco git checkout
 
 # is it a `main` or a `master` repo?
 alias gitmainormaster="git branch --format '%(refname:short)' --sort=-committerdate --list master main | head -n1"
