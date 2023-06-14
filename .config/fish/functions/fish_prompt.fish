@@ -3,6 +3,10 @@ if ! set -q lucid_dirty_indicator
   set -g lucid_dirty_indicator "•"
 end
 
+if ! set -q lucid_dirty_indicator_loading
+  set -g lucid_dirty_indicator_loading "◦"
+end
+
 # This should be set to be at least as long as lucid_dirty_indicator, due to a fish bug
 if ! set -q lucid_clean_indicator
   set -g lucid_clean_indicator (string replace -r -a '.' ' ' $lucid_dirty_indicator)
@@ -150,9 +154,8 @@ function __lucid_git_status
 
   if ! test -z $__lucid_dirty
     echo -n '' $__lucid_dirty
-  else if ! test -z $prev_dirty
-    set_color --dim $lucid_git_color
-    echo -n '' $prev_dirty
+  else if test $prev_dirty = $lucid_dirty_indicator
+    echo -n '' $lucid_dirty_indicator_loading
   end
 
   set_color normal
