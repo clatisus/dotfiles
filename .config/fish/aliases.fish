@@ -7,7 +7,10 @@ function ..... ; cd ../../../.. ; end
 abbr rm trash -F
 
 abbr g git
+abbr gc git commit
 abbr gco git checkout
+abbr gp git push
+abbr gl git pull
 
 # is it a `main` or a `master` repo?
 alias gitmainormaster="git branch --format '%(refname:short)' --sort=-committerdate --list master main | head -n1"
