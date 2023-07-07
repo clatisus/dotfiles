@@ -3,6 +3,7 @@ set -l PA $PATH
 set -l manually_added_paths "
 
 $HOME/.cargo/bin
+$HOME/Library/Python/3.9/bin
 
 "
 
