@@ -19,3 +19,5 @@ for entry in (string split \n $manually_added_paths)
 end
 
 set --export PATH $PA
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
