@@ -17,6 +17,9 @@ alias gitmainormaster="git branch --format '%(refname:short)' --sort=-committerd
 alias main="git checkout (gitmainormaster)"
 alias master="main"
 
+# rebase to merge base
+alias rebase="git rebase -i $(git merge-base master HEAD)"
+
 function ll --wraps ls --description "List contents of directory using long format"
     ls -alh $argv
 end
