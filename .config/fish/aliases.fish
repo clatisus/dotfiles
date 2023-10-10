@@ -18,7 +18,7 @@ alias main="git checkout (gitmainormaster)"
 alias master="main"
 
 # rebase to merge base
-alias rebase="git rebase -i $(git merge-base master HEAD)"
+alias rebase="git rebase -i (git merge-base master HEAD)"
 
 function ll --wraps ls --description "List contents of directory using long format"
     ls -alh $argv
@@ -28,3 +28,4 @@ end
 # git init --bare $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # config config --local status.showUntrackedFiles no
+
