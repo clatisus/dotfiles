@@ -20,6 +20,9 @@ alias master="main"
 # rebase to merge base
 alias rebase="git rebase -i (git merge-base master HEAD)"
 
+# clean up local branches
+alias gclean="git branch | grep -v '*' | grep -v master | xargs -I {} git branch -D {}"
+
 function ll --wraps ls --description "List contents of directory using long format"
     ls -alh $argv
 end
