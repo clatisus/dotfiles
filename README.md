@@ -12,6 +12,7 @@
 - [karabiner-elements](https://karabiner-elements.pqrs.org/)
 - [arc](https://arc.net/)
 - [alfred](https://www.alfredapp.com/)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ### Language specific
 
