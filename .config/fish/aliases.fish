@@ -23,6 +23,9 @@ alias rebase="git rebase -i (git merge-base master HEAD)"
 # clean up local branches
 alias gclean="git branch | grep -v '*' | grep -v master | xargs -I {} git branch -D {}"
 
+# rename current branch
+alias grename="git branch -m (git branch --show-current)"
+
 # find and replace
 function find_and_replace --description "Find and replace a string in all files in the current directory"
     set search $argv[1]
