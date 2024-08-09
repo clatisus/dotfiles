@@ -13,6 +13,7 @@
 - [arc](https://arc.net/)
 - [alfred](https://www.alfredapp.com/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [ast-grep](https://ast-grep.github.io/)
 
 ### Language specific
 
@@ -25,4 +26,5 @@
 #### Neovim
 
 - [neovim](https://neovim.io/)
-- [lazyvim](https://github.com/LazyVim/LazyVim/)
+- [nvchad](https://nvchad.com/)
+- [neovide](https://neovide.dev/)
