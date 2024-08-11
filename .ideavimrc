@@ -24,7 +24,7 @@ nmap <leader>, <Action>(Switcher)
 
 nmap <A-x> <Action>(GotoAction)
 
-map gs<leader> <Action>(AceAction)
+map s <Action>(AceAction)
 
 nnoremap Y y$
 nnoremap <Esc> :noh<cr>

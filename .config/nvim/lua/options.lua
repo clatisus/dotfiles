@@ -18,3 +18,6 @@ local default_path = vim.fn.expand("~/")
 if vim.fn.getcwd() == '/' then
   vim.api.nvim_set_current_dir(default_path)
 end
+
+-- general settings
+vim.opt.relativenumber = true
