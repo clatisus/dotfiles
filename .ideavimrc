@@ -9,20 +9,18 @@ set clipboard+=ideaput
 nmap <A-a> ggVG
 
 let mapleader = " "
-nmap <leader>bd <Action>(CloseContent)
-nmap <leader>bO <Action>(CloseAllEditorsButActive)
+nmap <leader>x <Action>(CloseContent)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
 
-nmap <leader>cr <Action>(RenameElement)
+nmap <leader>ra <Action>(RenameElement)
 nmap <leader>ca <Action>(ActivateProblemsViewToolWindow)
 
-map <leader><leader> <Action>(GotoFile)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fw <Action>(SearchEverywhere)
+nmap <leader>fb <Action>(Switcher)
+nmap <leader>fm <Action>(ReformatCode)
 
-nmap <leader>wV <Action>(SplitVertically)
-nmap <leader>wH <Action>(SplitHorizontally)
-
-nmap <leader>, <Action>(Switcher)
-
-nmap <A-x> <Action>(GotoAction)
+nmap <A-h> <Action>(ActivateTerminalToolWindow)
 
 map s <Action>(AceAction)
 
