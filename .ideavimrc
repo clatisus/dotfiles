@@ -9,8 +9,11 @@ set clipboard+=ideaput
 nmap <A-a> ggVG
 
 let mapleader = " "
+" buffer
 nmap <leader>x <Action>(CloseContent)
 nmap <leader>bo <Action>(CloseAllEditorsButActive)
+nmap <Tab> <Action>(NextTab)
+nmap <S-Tab> <Action>(PreviousTab)
 
 nmap <leader>ra <Action>(RenameElement)
 nmap <leader>ca <Action>(ActivateProblemsViewToolWindow)
@@ -18,9 +21,25 @@ nmap <leader>ca <Action>(ActivateProblemsViewToolWindow)
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fw <Action>(SearchEverywhere)
 nmap <leader>fb <Action>(Switcher)
+
 nmap <leader>fm <Action>(ReformatCode)
 
+" terminal
 nmap <A-h> <Action>(ActivateTerminalToolWindow)
+
+" zen mode
+nmap <leader>zm <Action>(ToggleZenMode)
+
+" git
+nmap <leader>ph <Action>(VcsShowCurrentChangeMarker)
+nmap <leader>gb <Action>(Annotate)
+nmap <leader>rh <Action>(Vcs.RollbackChangedLines)
+
+" window
+nmap <C-l> <C-W>l
+nmap <C-h> <C-W>h
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
 
 map s <Action>(AceAction)
 
