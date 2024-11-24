@@ -43,6 +43,10 @@ nmap <C-k> <C-W>k
 
 map s <Action>(AceAction)
 
+" adhoc
+nmap ; :
+map <leader>/ <Action>(CommentByLineComment)
+
 nnoremap Y y$
 nnoremap <Esc> :noh<cr>
 
