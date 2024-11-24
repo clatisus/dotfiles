@@ -5,6 +5,7 @@ set -l manually_added_paths "
 $HOME/.cargo/bin
 $HOME/Library/Application\ Support/JetBrains/Toolbox/scripts
 $HOME/go/bin
+$HOME/.config/emacs/bin
 
 "
 
