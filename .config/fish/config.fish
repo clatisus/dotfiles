@@ -6,7 +6,9 @@ source ~/.config/fish/path.fish
 zoxide init fish | source
 
 # for work
-source ~/.config/fish/airbnb.fish
+set work_config ~/.config/fish/airbnb.fish
+test -r $work_config; and source $work_config
+set -e work_config
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH $HOME/.ghcup/bin # ghcup-env
 
