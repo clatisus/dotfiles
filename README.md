@@ -12,6 +12,7 @@
 - [jq](https://jqlang.github.io/jq/)
 - [fzf](https://github.com/junegunn/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [fd](https://github.com/sharkdp/fd)
 
 #### Other tools
 - [mosh](https://mosh.org/)
@@ -26,6 +27,10 @@
 - [GHCup](https://www.haskell.org/ghcup/)
 
 ### Editor
+
+#### Emacs
+
+- [Doom Emacs](https://github.com/doomemacs/doomemacs)
 
 #### Neovim
 
