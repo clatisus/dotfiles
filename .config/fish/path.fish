@@ -6,6 +6,7 @@ $HOME/.cargo/bin
 $HOME/Library/Application\ Support/JetBrains/Toolbox/scripts
 $HOME/go/bin
 $HOME/.config/emacs/bin
+/opt/homebrew/opt/grep/libexec/gnubin
 
 "
 
