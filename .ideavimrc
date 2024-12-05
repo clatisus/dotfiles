@@ -10,7 +10,7 @@ nmap <A-a> ggVG
 
 let mapleader = " "
 " buffer
-nmap <leader>x <Action>(CloseContent)
+nmap <leader>bk <Action>(CloseContent)
 nmap <leader>bo <Action>(CloseAllEditorsButActive)
 nmap <Tab> <Action>(NextTab)
 nmap <S-Tab> <Action>(PreviousTab)
@@ -36,6 +36,7 @@ nmap <leader>gb <Action>(Annotate)
 nmap <leader>rh <Action>(Vcs.RollbackChangedLines)
 
 " window
+nmap <leader>wv <Action>(MoveTabRight)
 nmap <C-l> <C-W>l
 nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
